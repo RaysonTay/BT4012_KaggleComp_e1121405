@@ -1,0 +1,11 @@
+# Tested with Python 3.13 (needs Python >= 3.11 because of pandas 3.x)
+numpy==2.5.3
+pandas==3.0.5
+pyarrow==26.0.0
+scipy==1.18.1
+scikit-learn==1.9.1
+lightgbm==4.7.0
+xgboost==3.4.1
+matplotlib==3.11.2
+jupyter
+ipykernel

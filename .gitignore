@@ -1,0 +1,8 @@
+data/
+cache/
+submissions/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+metrics_f3.csv
