@@ -23,7 +23,7 @@ stage-1 scores and stage-2 base features.
 
 ## Reproduce
 
-1. **Python 3.12 or 3.13.** Tested on 3.13 (Linux) and 3.12 (Windows). Avoid 3.15: pandas 3.0.5
+1. **Python 3.12 or 3.13:** Tested on 3.13 (Linux) and 3.12 (Windows). Avoid 3.15: pandas 3.0.5
    has no prebuilt wheel for it on Windows and pip falls back to a source build that needs Visual
    Studio build tools. Create a virtual environment and install:
    ```
@@ -31,7 +31,7 @@ stage-1 scores and stage-2 base features.
    .venv\Scripts\activate          # Windows   (macOS/Linux: source .venv/bin/activate)
    pip install -r requirements.txt
    ```
-2. **Data.** Download the competition files from Kaggle and place them in a folder named `data/`
+2. **Data:** Download the competition files from Kaggle and place them in a folder named `data/`
    next to the notebook (the dataset is not in this repo):
    ```
    data/train.csv
@@ -45,12 +45,12 @@ stage-1 scores and stage-2 base features.
    threshold metrics table (ROC-AUC, average precision, accuracy, precision, recall, F1 at 0.5)
    on fold F3 (train steps 1–28, validate 29–35). About 6 minutes; writes `metrics_f3.csv`.
 
-**Runtime.** About 2 hours on a 2-core CPU, faster with more cores. Almost all of it is Section 7: each of
+**Runtime:** About 2 hours on a 2-core CPU, faster with more cores. Almost all of it is Section 7: each of
 the 8 stacked models trains 7 models per seed, over 3 seeds. To regenerate only the submission files,
 set `RUN_ABLATION = False` and `RUN_STACK_VALIDATION = False` in the first code cell. This skips the
 validation experiments and leaves the final predictions unchanged.
 
-**Determinism.** Every model uses a fixed seed. On the original machine (Linux, Python 3.13),
+**Determinism:** Every model uses a fixed seed. On the original machine (Linux, Python 3.13),
 re-running the notebook reproduced the submitted CSVs to floating-point precision (max absolute
 difference ≈ 1e-16). On a different platform (Windows, Python 3.12), multithreaded tree libraries
 give slightly different floating-point results: `final_sub14_graphstack.csv` differed on 5 of 15,329
